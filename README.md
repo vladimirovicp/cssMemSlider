@@ -1,7 +1,7 @@
 # cssBayan
 
 ## Link
-[To page](https://vladimirovicp.github.io/cssMemeSlider/cssMemeSlider/index.html)
+[To page](https://vladimirovicp.github.io/cssMemSlider/cssMemeSlider/index.html)
 
 ## тайм-стемп
 ```
