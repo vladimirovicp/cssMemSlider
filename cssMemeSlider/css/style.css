@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #e1e1e1;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background-image: url(../img/bg-pattern.jpg);
+
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    padding: 1.5rem;
+    background: black;
+}
+
+.wrapper > input {
+    display: none;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+}
+
+.slides-wrapper{
+    display: flex;
+    background: black;
+    width: 64rem;
+    height: 35rem;
+    overflow: hidden;
+}
+
+.slides{
+    width: 64rem;
+    height: 31rem;
+    flex-shrink: 0;
+    text-align: center;
+    transition: margin-left .6s ease;
+    background-color: #777777;
+}
+
+.slides .title{
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 1.4rem;
+}
+
+img{
+    height: 100%;
+    width: auto;
+}
+
+.controls{
+    display: flex;
+    background: #000;
+    margin-left: auto;
+    margin-top: -2.45rem;
+}
+
+.controls label{
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.controls label span{
+    background-color: #71abfe;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    transition: background ease-in-out .5s;
+}
+
+#slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+#slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+#slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+#slide4:checked ~ .slider .controls label:nth-of-type(4) span{
+    background: transparent;
+    border: .2rem solid #71abfe;
+}
+
+.controls label:active span{
+    background-color: brown;
+    border: .5rem solid brown;
+}
+
+#slide1:checked ~ .slider .slide1{margin-left: 0;}
+#slide2:checked ~ .slider .slide1{margin-left: -100%;}
+#slide3:checked ~ .slider .slide1{margin-left: -200%;}
+#slide4:checked ~ .slider .slide1{margin-left: -300%;}
+
+
+
+
+@media (hover: hover) {
+
+    .controls label:hover span{
+        background-color: #fff;
+    }
+
+    #slide1:checked ~ .slider .controls label:nth-of-type(1):hover,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2):hover,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3):hover,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4):hover{
+        cursor: default;
+    }
+
+}
+
+
+@media (min-width: 90em) {
+    .container{
+        width: 90rem;
+        margin: 0 auto;
+    }
+
+    .controls{
+
+    }
+
+    .slides .title{
+        font-size: 1.5rem;
+        margin-top: 1.4rem;
+    }
+}
+
+@media (max-width: 90em) {
+    .slider{
+
+    }
+
+    .slides-wrapper{
+        width: 90rem;
+        height: 50rem;
+    }
+
+    .slides{
+        width: 90rem;
+        height: 45rem;
+    }
+
+    .controls{
+        margin-top: -3rem;
+    }
+
+
+    .controls label{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .controls label span{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .slides .title{
+        font-size: 2rem;
+        margin-top: 1.8rem;
+    }
+
+    #slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4) span{
+        border: .3rem solid #71abfe;
+    }
+
+}
+
+
+@media (max-width: 48em) {
+
+    .wrapper{padding-bottom: 26rem;}
+
+    .slider{
+
+    }
+
+    .slides-wrapper{
+        width: 80rem;
+        height: 95rem;
+    }
+
+    .slides{
+        width: 80rem;
+        height: 80rem;
+    }
+
+    .controls{
+        margin: -13rem auto;
+    }
+    .controls label{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .controls label span{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .slides .title{
+        font-size: 3rem;
+        margin-top: 9rem;
+    }
+
+    #slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4) span{
+        border: .5rem solid #71abfe;
+    }
+
+    .controls label:active span{
+        background-color: brown;
+        border: 1rem solid brown;
+    }
+
+
+}
+
+
+
+
+
