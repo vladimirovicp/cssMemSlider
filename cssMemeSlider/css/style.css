@@ -28,7 +28,6 @@ body {
 }
 
 .wrapper{
-    position: relative;
     padding: 1.5rem;
     background: black;
 }
@@ -39,13 +38,15 @@ body {
 
 .slider{
     display: flex;
+    flex-direction: column;
+}
+
+.slides-wrapper{
+    display: flex;
     background: black;
-    /*width: 500px;*/
     width: 64rem;
     height: 35rem;
-
     overflow: hidden;
-    /*overflow-x: scroll;*/
 }
 
 .slides{
@@ -70,11 +71,10 @@ img{
 }
 
 .controls{
-    position: absolute;
-    bottom: 2rem;
-    right: 1.5rem;
     display: flex;
     background: #000;
+    margin-left: auto;
+    margin-top: -2.45rem;
 }
 
 .controls label{
@@ -86,6 +86,7 @@ img{
     justify-content: center;
 }
 
+
 .controls label span{
     background-color: #71abfe;
     border-radius: 50%;
@@ -95,12 +96,17 @@ img{
     transition: background ease-in-out .5s;
 }
 
-#slide1:checked ~ .controls label:nth-of-type(1) span,
-#slide2:checked ~ .controls label:nth-of-type(2) span,
-#slide3:checked ~ .controls label:nth-of-type(3) span,
-#slide4:checked ~ .controls label:nth-of-type(4) span{
+#slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+#slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+#slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+#slide4:checked ~ .slider .controls label:nth-of-type(4) span{
     background: transparent;
     border: .2rem solid #71abfe;
+}
+
+.controls label:active span{
+    background-color: brown;
+    border: .5rem solid brown;
 }
 
 #slide1:checked ~ .slider .slide1{margin-left: 0;}
@@ -112,9 +118,18 @@ img{
 
 
 @media (hover: hover) {
+
     .controls label:hover span{
         background-color: #fff;
     }
+
+    #slide1:checked ~ .slider .controls label:nth-of-type(1):hover,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2):hover,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3):hover,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4):hover{
+        cursor: default;
+    }
+
 }
 
 
@@ -125,7 +140,7 @@ img{
     }
 
     .controls{
-        bottom: 2rem;
+
     }
 
     .slides .title{
@@ -136,6 +151,10 @@ img{
 
 @media (max-width: 90em) {
     .slider{
+
+    }
+
+    .slides-wrapper{
         width: 90rem;
         height: 50rem;
     }
@@ -144,6 +163,11 @@ img{
         width: 90rem;
         height: 45rem;
     }
+
+    .controls{
+        margin-top: -3rem;
+    }
+
 
     .controls label{
         width: 2.5rem;
@@ -160,10 +184,10 @@ img{
         margin-top: 1.8rem;
     }
 
-    #slide1:checked ~ .controls label:nth-of-type(1) span,
-    #slide2:checked ~ .controls label:nth-of-type(2) span,
-    #slide3:checked ~ .controls label:nth-of-type(3) span,
-    #slide4:checked ~ .controls label:nth-of-type(4) span{
+    #slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4) span{
         border: .3rem solid #71abfe;
     }
 
@@ -171,7 +195,14 @@ img{
 
 
 @media (max-width: 48em) {
+
+    .wrapper{padding-bottom: 26rem;}
+
     .slider{
+
+    }
+
+    .slides-wrapper{
         width: 80rem;
         height: 95rem;
     }
@@ -182,9 +213,7 @@ img{
     }
 
     .controls{
-        bottom: 10rem;
-        right: 50%;
-        transform: translateX(50%);
+        margin: -13rem auto;
     }
     .controls label{
         width: 4.5rem;
@@ -201,11 +230,16 @@ img{
         margin-top: 9rem;
     }
 
-    #slide1:checked ~ .controls label:nth-of-type(1) span,
-    #slide2:checked ~ .controls label:nth-of-type(2) span,
-    #slide3:checked ~ .controls label:nth-of-type(3) span,
-    #slide4:checked ~ .controls label:nth-of-type(4) span{
+    #slide1:checked ~ .slider .controls label:nth-of-type(1) span,
+    #slide2:checked ~ .slider .controls label:nth-of-type(2) span,
+    #slide3:checked ~ .slider .controls label:nth-of-type(3) span,
+    #slide4:checked ~ .slider .controls label:nth-of-type(4) span{
         border: .5rem solid #71abfe;
+    }
+
+    .controls label:active span{
+        background-color: brown;
+        border: 1rem solid brown;
     }
 
 
